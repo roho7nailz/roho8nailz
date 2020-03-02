@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>roho7nailz.com</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+<style>
+	
+	@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i');
+body {
+  font-family: 'Lato', "Helvetica", Arial, sans-serif;
+}
+
+/* remove bootstrap gutter*/
+.row.no-gutter {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+
+/* the good stuff */
+body {
+}
+
+.img-featured-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.img-featured-container img {
+  width: 100%;
+ padding: 10px; 
+}
+
+.img-featured-container .img-backdrop {
+  background: linear-gradient(135deg, rgba(38, 163, 255, 0.85), rgba(83, 201, 179, 0.85));
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.img-featured-container:hover > .img-backdrop {
+  opacity: 1;
+}
+
+/* center text horizontally and vertically on image hover */
+.img-featured-container .description-container {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.2;
+  padding: 0 30px;
+  text-align: center;
+  line-height: 20px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  z-index: 2;
+  opacity: 0;
+  transition: all .2s ease;
+}
+
+.img-featured-container .description-container .fa-instagram {
+  font-size: 40px;
+}
+
+.img-featured-container .description-container p {
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.img-featured-container:hover .description-container {
+  opacity: 1;
+}
+
+.img-featured-container .description-container .caption {
+  display: none;
+  margin-bottom: 10px;
+}
+
+.img-featured-container .description-container .likes,
+.img-featured-container .description-container .comments {
+  margin: 0 5px;
+}
+
+/* load more button */
+#btn-instafeed-load {
+  color: #fff;
+  background: #26a3ff;
+  font-size: 16px;
+  margin: 20px auto;
+  padding: 8px 40px;
+  display: block;
+  border: none;
+}
+
+/* media queries  */
+@media screen and (min-width:768px) {
+  .img-featured-container .description-container .caption {
+    display: block;
+  }
+}</style>
+	<style>
+	@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
+section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+section::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 80%;
+  background: -webkit-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.8) 80%,rgba(0,0,0,.8) 100%);
+  background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.8) 80%,rgba(0,0,0,.8) 100%);
+}
+section h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font : normal 300 64px/1 'Josefin Sans', sans-serif;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#section01 { background: url(https://drive.google.com/uc?export=view&id=1NpohKbJETY0hBkwnlK50JpIFgTUaDy9c) center center / cover no-repeat;}
+	
+	</style>
+</head>
+<body>
+	
+	<section id="section01" class="demo">
+  <h1>roho7nailz</h1>
+		
+  <a href="#section02"><span></span>Scroll</a>
+</section>
+
+
+
+	
+<!-- partial:index.partial.html -->
+<div id="instafeed-gallery-feed" class="gallery row no-gutter">
+
+<!--  instagram feed will load here - markup below was used to structure images before loading them through instafeed -->
+  
+<!--   <div class="col-xs-12 col-sm-4">
+    <a href="{{image}}" data-caption="{{model.user.username}}, {{likes}} likes">
+        <div class="img-featured-container">
+            <div class="img-backdrop"></div>
+            <div class="description-container">
+                <p>{{caption}}</p>
+            </div><img src="http://placehold.it/500x500" class="img-responsive">
+        </div>
+    </a>
+</div> -->
+
+</div>
+
+<button id="btn-instafeed-load" class="btn">Load more</button>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js'></script>
+
+	
+	<script>
+	// How to get an access token:
+// http://jelled.com/instagram/access-token
+
+// TODO:
+// - improve UI
+// - make it easy to copy and paste image url
+
+// {{model.user.username}}, {{likes}} likes
+
+var galleryFeed = new Instafeed({
+  get: "user",
+userId: 8306777100,
+  accessToken: "8306777100.1677ed0.e4b8d2d2f4894e31baca97d9d6fcb64b",
+  resolution: "standard_resolution",
+  useHttp: "true",
+  limit: 6,
+  template: '<div class="col-xs-12 col-sm-6 col-md-4"><a href="https://stormy-wildwood-03421.herokuapp.com"><div class="img-featured-container"><div class="img-backdrop"></div><div class="description-container"><p class="caption">{{caption}}</p><span class="likes"><i class="icon ion-heart"></i> {{likes}}</span><span class="comments"><i class="icon ion-chatbubble"></i> {{comments}}</span></div><img src="{{image}}" class="img-responsive"></div></a></div>',
+  target: "instafeed-gallery-feed",
+  after: function() {
+    // disable button if no more results to load
+    if (!this.hasNext()) {
+      btnInstafeedLoad.setAttribute('disabled', 'disabled');
+    }
+  },
+});
+galleryFeed.run();
+
+var btnInstafeedLoad = document.getElementById("btn-instafeed-load");
+btnInstafeedLoad.addEventListener("click", function() {
+  galleryFeed.next()
+});
+	
+	</script>
+
+</body>
+</html>
